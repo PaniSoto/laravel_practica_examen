@@ -11,6 +11,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 
+
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -28,9 +29,16 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'surname',
         'email',
         'password',
+        'phone'
     ];
+
+    public function dietas(): HasMany
+    {
+        return $this->hasMany(Dieta::class);
+    }
 
     /**
      * The attributes that should be hidden for serialization.
@@ -65,9 +73,6 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
-
-    public function dietas(): HasMany
-    {
-        return $this->hasMany(Dieta::class);
-    }
+    
+   
 }

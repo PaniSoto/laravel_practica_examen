@@ -21,12 +21,12 @@ class UserSeeder extends Seeder
         $user->password = '12345678';
         $user->save();
 
-        $user = new User();
-        $user->name = 'Turbo';
-        $user->surname = 'Abuela';
-        $user->phone = '692364361';
-        $user->email = 'turborucagitana@gmail.com';
-        $user->password = '12345678';
-        $user->save();
+        // $user = new User();
+        // $user->name = 'Turbo';
+        // $user->surname = 'Abuela';
+        // $user->phone = '692364361';
+        // $user->email = 'turborucagitana@gmail.com';
+        // $user->password = '12345678';
+        // $user->save();
     }
 }

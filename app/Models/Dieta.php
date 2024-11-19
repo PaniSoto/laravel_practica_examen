@@ -2,13 +2,27 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
+
 class Dieta extends Model
 {
-    public function clientes(): BelongsTo
+    use HasFactory;
+
+    protected $fillable = [
+        'user_id',
+        'title',
+        'description',
+        'totalCalories',
+        'date'
+    ];
+
+
+    public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
+
 }

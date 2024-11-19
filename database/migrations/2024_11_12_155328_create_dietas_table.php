@@ -18,8 +18,8 @@ return new class extends Migration
             $table->integer('totalCalories');
             $table->date('date');
             $table->timestamps();
-            $table->unsignedBigInteger('id_users');
-            $table->foreign('id_users')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 
